@@ -5,6 +5,7 @@ import Footer from '@/components/layout/Footer';
 import Hero from '@/components/home/Hero';
 import ServicesGrid from '@/components/home/ServicesGrid';
 import LiveChat from '@/components/chat/LiveChat';
+import { Link } from 'react-router-dom';
 
 const Index = () => {
   return (
@@ -19,13 +20,13 @@ const Index = () => {
             <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
               Our QR-based job offer system makes it easy to find and accept new opportunities. Scan, review, and decide—all in one seamless experience.
             </p>
-            <a 
-              href="/careers" 
+            <Link 
+              to="/careers" 
               className="cta-button inline-block"
               aria-label="Explore opportunities"
             >
               Explore Opportunities
-            </a>
+            </Link>
           </div>
         </section>
       </main>
