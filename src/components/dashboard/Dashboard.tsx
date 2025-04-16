@@ -1,5 +1,5 @@
-
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { 
   BarChart, Users, Briefcase, Clock, CheckCircle, XCircle, 
   ChevronDown, ChevronUp, FileText, Download 
@@ -26,6 +26,7 @@ interface Stats {
 const Dashboard = () => {
   const [selectedTab, setSelectedTab] = useState<'offers' | 'stats' | 'profile'>('offers');
   const [expandedOffer, setExpandedOffer] = useState<string | null>(null);
+  const navigate = useNavigate();
 
   const jobOffers: JobOffer[] = [
     {
@@ -100,6 +101,10 @@ const Dashboard = () => {
       case 'expired': return <Clock size={16} />;
       default: return <Clock size={16} />;
     }
+  };
+
+  const handleEditProfile = () => {
+    navigate('/profile');
   };
 
   return (
@@ -384,7 +389,10 @@ const Dashboard = () => {
                     </div>
                     
                     <div className="sm:ml-auto mt-4 sm:mt-0">
-                      <button className="bg-callx-blue text-white px-4 py-2 rounded-md hover:bg-callx-blue/90 transition">
+                      <button 
+                        className="bg-callx-blue text-white px-4 py-2 rounded-md hover:bg-callx-blue/90 transition"
+                        onClick={handleEditProfile}
+                      >
                         Edit Profile
                       </button>
                     </div>
