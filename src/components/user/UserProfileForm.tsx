@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -31,6 +31,7 @@ export const UserProfileForm: React.FC<UserProfileFormProps> = ({
 }) => {
   const [formData, setFormData] = useState<UserData>(userData);
   const [newSkill, setNewSkill] = useState('');
+  const fileInputRef = useRef<HTMLInputElement>(null);
   
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -61,6 +62,21 @@ export const UserProfileForm: React.FC<UserProfileFormProps> = ({
       skills: prev.skills.filter(skill => skill !== skillToRemove)
     }));
   };
+
+  const handlePhotoClick = () => {
+    fileInputRef.current?.click();
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const imageUrl = URL.createObjectURL(file);
+      setFormData(prev => ({
+        ...prev,
+        avatar: imageUrl
+      }));
+    }
+  };
   
   return (
     <Card>
@@ -84,10 +100,18 @@ export const UserProfileForm: React.FC<UserProfileFormProps> = ({
                 type="button" 
                 variant="outline" 
                 className="mb-2"
+                onClick={handlePhotoClick}
               >
                 <Camera className="mr-2 h-4 w-4" />
                 Change Photo
               </Button>
+              <input 
+                type="file"
+                ref={fileInputRef}
+                onChange={handleFileChange}
+                accept="image/*"
+                style={{ display: 'none' }}
+              />
               <p className="text-sm text-gray-500">
                 JPG, GIF or PNG. Max size of 800K
               </p>
