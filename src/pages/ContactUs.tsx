@@ -70,7 +70,7 @@ const ContactUs = () => {
                   <div>
                     <h3 className="text-lg font-semibold text-callx-blue mb-1">Visit Us</h3>
                     <p className="text-gray-600">123 Business Avenue, Suite 100</p>
-                    <p className="text-gray-600">San Francisco, CA 94107</p>
+                    <p className="text-gray-600">Sheikh Zayed Road, Dubai Media City, Dubai, UAE</p>
                   </div>
                 </div>
                 
