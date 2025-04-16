@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { 
@@ -30,41 +31,51 @@ const Dashboard = () => {
 
   const jobOffers: JobOffer[] = [
     {
-      id: 'JO-2023-001',
+      id: 'JOB001',
       position: 'Customer Support Agent',
       company: 'Call X Trade',
-      location: 'San Francisco, CA',
-      salary: '$45,000 - $55,000',
+      location: 'Dubai, UAE',
+      salary: '2,200 AED',
       status: 'pending',
       date: '2023-04-10',
       expiresIn: '8h 30m'
     },
     {
-      id: 'JO-2023-002',
+      id: 'JOB002',
       position: 'Technical Support Specialist',
       company: 'Tech Solutions Inc.',
-      location: 'Remote',
-      salary: '$50,000 - $65,000',
+      location: 'Remote (UAE Based)',
+      salary: '5,500 AED',
       status: 'accepted',
       date: '2023-04-05'
     },
     {
-      id: 'JO-2023-003',
+      id: 'JOB003',
       position: 'Call Center Team Lead',
       company: 'Global Services LLC',
-      location: 'Chicago, IL',
-      salary: '$60,000 - $70,000',
+      location: 'Abu Dhabi, UAE',
+      salary: '3,500 AED',
       status: 'declined',
       date: '2023-03-28'
     },
     {
-      id: 'JO-2023-004',
+      id: 'JOB004',
       position: 'Bilingual Customer Rep',
       company: 'International Support Co.',
-      location: 'Austin, TX',
-      salary: '$48,000 - $58,000',
+      location: 'Sharjah, UAE',
+      salary: '4,000 AED',
       status: 'expired',
       date: '2023-03-15'
+    },
+    {
+      id: 'JOB005',
+      position: 'Part-Time Support Agent',
+      company: 'Call X Trade',
+      location: 'Ajman, UAE',
+      salary: '25,000 AED',
+      status: 'pending',
+      date: '2023-04-12',
+      expiresIn: '3d 4h'
     }
   ];
 
