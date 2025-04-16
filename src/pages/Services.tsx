@@ -4,6 +4,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import LiveChat from '@/components/chat/LiveChat';
 import { Headphones, Users, UserPlus, BarChart, PhoneCall, Briefcase, CheckCircle } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Services = () => {
   return (
@@ -243,22 +244,22 @@ const Services = () => {
               Join the businesses already benefiting from our innovative approach to customer service recruitment and management.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <a 
-                href="/contact" 
+              <Link 
+                to="/contact-us" 
                 className="cta-button inline-block"
                 aria-label="Contact us"
               >
                 Contact Us
-              </a>
+              </Link>
               
-              <a 
-                href="/careers" 
+              <Link 
+                to="/careers" 
                 className="inline-flex items-center justify-center px-6 py-3 bg-transparent border-2 border-callx-blue text-callx-blue rounded-full
                   hover:bg-callx-blue hover:text-white transition duration-300 font-bold"
                 aria-label="View job offers"
               >
                 View Job Offers
-              </a>
+              </Link>
             </div>
           </div>
         </section>
