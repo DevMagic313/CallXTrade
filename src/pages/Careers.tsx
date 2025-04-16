@@ -25,8 +25,8 @@ const jobListings: JobListing[] = [
     id: "JOB001",
     position: "Customer Support Agent",
     company: "Call X Trade",
-    location: "San Francisco, CA",
-    salary: "$45,000 - $55,000",
+    location: "Dubai, UAE",
+    salary: "2,200 AED",
     benefits: ["Health Insurance", "401k Matching", "Paid Training"],
     requirements: ["2+ years experience", "Bilingual+"],
     description: "Join our team as a customer support agent to help our clients with their needs. You'll be the first point of contact for customers and provide exceptional service.",
@@ -38,8 +38,8 @@ const jobListings: JobListing[] = [
     id: "JOB002",
     position: "Technical Support Specialist",
     company: "Tech Solutions Inc.",
-    location: "Remote",
-    salary: "$50,000 - $65,000",
+    location: "Remote (UAE Based)",
+    salary: "5,500 AED",
     benefits: ["Remote Work", "Healthcare", "Professional Development"],
     requirements: ["3+ years technical support", "IT certifications"],
     description: "As a technical support specialist, you'll troubleshoot complex issues and provide technical assistance to our clients. Strong problem-solving skills required.",
@@ -51,8 +51,8 @@ const jobListings: JobListing[] = [
     id: "JOB003",
     position: "Call Center Team Lead",
     company: "Global Services LLC",
-    location: "Chicago, IL",
-    salary: "$60,000 - $70,000",
+    location: "Abu Dhabi, UAE",
+    salary: "3,500 AED",
     benefits: ["Comprehensive Benefits", "Leadership Training", "Performance Bonuses"],
     requirements: ["5+ years call center experience", "2+ years leadership"],
     description: "Lead a team of customer service representatives, ensuring high-quality service and performance. You'll be responsible for training, coaching, and performance evaluation.",
@@ -64,11 +64,11 @@ const jobListings: JobListing[] = [
     id: "JOB004",
     position: "Bilingual Customer Rep",
     company: "International Support Co.",
-    location: "Austin, TX",
-    salary: "$48,000 - $58,000",
+    location: "Sharjah, UAE",
+    salary: "4,000 AED",
     benefits: ["Bilingual Pay Differential", "Health Benefits", "Flexible Schedule"],
-    requirements: ["Fluent in English and Spanish", "1+ year customer service"],
-    description: "Provide customer support in both English and Spanish. You'll handle customer inquiries, process orders, and resolve issues for our diverse customer base.",
+    requirements: ["Fluent in English and Arabic", "1+ year customer service"],
+    description: "Provide customer support in both English and Arabic. You'll handle customer inquiries, process orders, and resolve issues for our diverse customer base.",
     type: "Full-time",
     postedAt: "2023-03-15",
     expiry: "2023-06-15"
@@ -77,8 +77,8 @@ const jobListings: JobListing[] = [
     id: "JOB005",
     position: "Part-Time Support Agent",
     company: "Call X Trade",
-    location: "Denver, CO",
-    salary: "$20 - $25/hour",
+    location: "Ajman, UAE",
+    salary: "25,000 AED",
     benefits: ["Flexible Hours", "Paid Time Off", "Growth Opportunities"],
     description: "Join our team part-time to provide exceptional customer service. Perfect for students or those seeking flexible work arrangements.",
     type: "Part-time",
@@ -148,11 +148,11 @@ const Careers = () => {
                       className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 rounded-md focus:outline-none focus:ring-callx-blue focus:border-callx-blue"
                     >
                       <option value="">All Locations</option>
-                      <option value="San Francisco">San Francisco</option>
+                      <option value="Dubai">Dubai</option>
+                      <option value="Abu Dhabi">Abu Dhabi</option>
+                      <option value="Sharjah">Sharjah</option>
+                      <option value="Ajman">Ajman</option>
                       <option value="Remote">Remote</option>
-                      <option value="Chicago">Chicago</option>
-                      <option value="Austin">Austin</option>
-                      <option value="Denver">Denver</option>
                     </select>
                   </div>
                   <div>
@@ -221,7 +221,6 @@ const Careers = () => {
               )}
             </div>
             
-            {/* Right Column - Job Details or QR Offer */}
             <div className="lg:col-span-1">
               {showQrOffer && selectedJob ? (
                 <div className="bg-white rounded-lg shadow-md p-6 sticky top-28">
