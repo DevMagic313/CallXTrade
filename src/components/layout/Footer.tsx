@@ -50,11 +50,11 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start space-x-3">
                 <MapPin size={18} className="mt-1 flex-shrink-0" />
-                <span className="text-gray-300">123 Business Avenue, Suite 100, San Francisco, CA 94107</span>
+                <span className="text-gray-300">Sheikh Zayed Road, Dubai Media City, Dubai, UAE</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Phone size={18} className="flex-shrink-0" />
-                <span className="text-gray-300">(555) 123-4567</span>
+                <span className="text-gray-300">+971 4 123 4567</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail size={18} className="flex-shrink-0" />
@@ -76,7 +76,7 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-gray-700 pt-6 mt-6 text-center text-gray-400 text-sm">
-          <p>&copy; {new Date().getFullYear()} Call X Trade. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Call X Trade. All rights reserved | Developed By DevMagic</p>
           <div className="mt-2 space-x-4">
             <Link to="/privacy-policy" className="hover:text-callx-gold transition-colors">Privacy Policy</Link>
             <Link to="/terms-of-service" className="hover:text-callx-gold transition-colors">Terms of Service</Link>
