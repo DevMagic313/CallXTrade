@@ -80,7 +80,7 @@ const ContactUs = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-callx-blue mb-1">Email Us</h3>
-                    <p className="text-gray-600">info@callxtrade.com</p>
+                    <p className="text-gray-600">callxtrade764@gmail.com</p>
                     <p className="text-gray-600">support@callxtrade.com</p>
                   </div>
                 </div>
