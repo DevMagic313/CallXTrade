@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { 
@@ -25,7 +24,7 @@ interface Stats {
 }
 
 const Dashboard = () => {
-  const [selectedTab, setSelectedTab] = useState<'offers' | 'stats' | 'profile'>('offers');
+  const [selectedTab, setSelectedTab] = useState<'offers' | 'stats'>('offers');
   const [expandedOffer, setExpandedOffer] = useState<string | null>(null);
   const navigate = useNavigate();
 
@@ -114,8 +113,17 @@ const Dashboard = () => {
     }
   };
 
-  const handleEditProfile = () => {
-    navigate('/profile');
+const handleViewOffer = (offerId: string) => {
+    window.open(`/job-offer-letter/job-offer-letter-${offerId}.pdf`, '_blank');
+  };
+
+  const handleDownloadOffer = (offerId: string) => {
+    const link = document.createElement('a');
+    link.href = `/job-offer-letter/job-offer-letter-${offerId}.pdf`;
+    link.download = `offer-${offerId}.pdf`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -165,20 +173,6 @@ const Dashboard = () => {
                 <div className="flex items-center">
                   <BarChart size={18} className="mr-2" />
                   <span>Stats</span>
-                </div>
-              </button>
-              
-              <button
-                className={`py-4 px-6 text-sm font-medium border-b-2 ${
-                  selectedTab === 'profile'
-                    ? 'border-callx-gold text-callx-blue'
-                    : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-                } transition-colors`}
-                onClick={() => setSelectedTab('profile')}
-              >
-                <div className="flex items-center">
-                  <Users size={18} className="mr-2" />
-                  <span>Profile</span>
                 </div>
               </button>
             </nav>
@@ -284,22 +278,27 @@ const Dashboard = () => {
                                   
                                   <div className="flex flex-col sm:flex-row md:flex-col items-start gap-2">
                                     <button
-                                      type="button"
-                                      className="inline-flex items-center px-3 py-1.5 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-callx-blue hover:bg-callx-blue/90"
-                                      aria-label="View offer letter"
-                                    >
-                                      <FileText size={16} className="mr-1.5" />
-                                      View Offer Letter
-                                    </button>
+  type="button"
+  className="inline-flex items-center px-3 py-1.5 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-callx-blue hover:bg-callx-blue/90"
+  onClick={() => handleViewOffer(offer.id)}
+  aria-label="View offer letter"
+>
+  <FileText size={16} className="mr-1.5" />
+  View Offer Letter
+</button>
                                     
-                                    <button
-                                      type="button"
-                                      className="inline-flex items-center px-3 py-1.5 border border-gray-300 text-sm font-medium rounded-md shadow-sm text-gray-700 bg-white hover:bg-gray-50"
-                                      aria-label="Download offer as PDF"
-                                    >
-                                      <Download size={16} className="mr-1.5" />
-                                      Download PDF
-                                    </button>
+                                   <button
+        type="button"
+        className="inline-flex items-center px-3 py-1.5 border border-gray-300 text-sm font-medium rounded-md shadow-sm text-gray-700 bg-white hover:bg-gray-50"
+        onClick={(e) => {
+          e.stopPropagation();
+          handleDownloadOffer(offer.id);
+        }}
+        aria-label="Download offer as PDF"
+      >
+        <Download size={16} className="mr-1.5" />
+        Download PDF
+      </button>
                                   </div>
                                 </div>
                               </td>
@@ -368,115 +367,6 @@ const Dashboard = () => {
                   <div className="text-center py-8 text-gray-500">
                     <BarChart size={48} className="mx-auto text-gray-300 mb-4" />
                     <p>Your detailed activity charts will appear here after more interactions.</p>
-                  </div>
-                </div>
-              </div>
-            )}
-            
-            {selectedTab === 'profile' && (
-              <div>
-                <h2 className="text-xl font-semibold mb-6 text-gray-800">Your Profile</h2>
-                
-                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 mb-6">
-                  <div className="flex flex-col sm:flex-row sm:items-center gap-6">
-                    <div className="bg-callx-blue rounded-full w-24 h-24 flex items-center justify-center text-white text-3xl font-bold">
-                      JD
-                    </div>
-                    
-                    <div>
-                      <h3 className="text-xl font-bold text-gray-800">John Doe</h3>
-                      <p className="text-gray-500">Customer Service Specialist</p>
-                      <div className="mt-2 space-y-1">
-                        <p className="text-sm text-gray-600 flex items-center">
-                          <span className="w-20 text-gray-500">Email:</span> john.doe@example.com
-                        </p>
-                        <p className="text-sm text-gray-600 flex items-center">
-                          <span className="w-20 text-gray-500">Phone:</span> (555) 123-4567
-                        </p>
-                        <p className="text-sm text-gray-600 flex items-center">
-                          <span className="w-20 text-gray-500">Location:</span> San Francisco, CA
-                        </p>
-                      </div>
-                    </div>
-                    
-                    <div className="sm:ml-auto mt-4 sm:mt-0">
-                      <button 
-                        className="bg-callx-blue text-white px-4 py-2 rounded-md hover:bg-callx-blue/90 transition"
-                        onClick={handleEditProfile}
-                      >
-                        Edit Profile
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 mb-6">
-                  <h3 className="text-lg font-medium text-gray-800 mb-4">Skills & Experience</h3>
-                  
-                  <div className="space-y-4">
-                    <div>
-                      <h4 className="text-sm font-semibold text-gray-700 mb-2">Top Skills</h4>
-                      <div className="flex flex-wrap gap-2">
-                        <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm">Customer Support</span>
-                        <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">Call Center</span>
-                        <span className="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm">Problem Solving</span>
-                        <span className="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm">CRM Systems</span>
-                        <span className="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm">Bilingual</span>
-                      </div>
-                    </div>
-                    
-                    <div>
-                      <h4 className="text-sm font-semibold text-gray-700 mb-2">Experience</h4>
-                      <div className="space-y-3">
-                        <div className="border-l-2 border-callx-blue pl-4 py-1">
-                          <p className="text-gray-800 font-medium">Customer Service Rep</p>
-                          <p className="text-gray-600 text-sm">Tech Solutions Inc. • 2020 - 2023</p>
-                        </div>
-                        <div className="border-l-2 border-gray-300 pl-4 py-1">
-                          <p className="text-gray-800 font-medium">Call Center Agent</p>
-                          <p className="text-gray-600 text-sm">Global Support Co. • 2018 - 2020</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-                  <h3 className="text-lg font-medium text-gray-800 mb-4">Preferences</h3>
-                  
-                  <div className="space-y-4">
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <p className="text-gray-800 font-medium">Email Notifications</p>
-                        <p className="text-gray-500 text-sm">Receive emails about new job offers</p>
-                      </div>
-                      <label className="relative inline-flex items-center cursor-pointer">
-                        <input type="checkbox" value="" className="sr-only peer" defaultChecked />
-                        <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-callx-blue"></div>
-                      </label>
-                    </div>
-                    
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <p className="text-gray-800 font-medium">SMS Notifications</p>
-                        <p className="text-gray-500 text-sm">Receive text messages about urgent offers</p>
-                      </div>
-                      <label className="relative inline-flex items-center cursor-pointer">
-                        <input type="checkbox" value="" className="sr-only peer" />
-                        <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-callx-blue"></div>
-                      </label>
-                    </div>
-                    
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <p className="text-gray-800 font-medium">Job Preferences</p>
-                        <p className="text-gray-500 text-sm">Show only remote job opportunities</p>
-                      </div>
-                      <label className="relative inline-flex items-center cursor-pointer">
-                        <input type="checkbox" value="" className="sr-only peer" defaultChecked />
-                        <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-callx-blue"></div>
-                      </label>
-                    </div>
                   </div>
                 </div>
               </div>
