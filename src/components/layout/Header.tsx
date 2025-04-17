@@ -27,9 +27,9 @@ const Header = () => {
             <User size={18} />
             <span>Dashboard</span>
           </Link>
-          <Link to="/profile" className="bg-callx-gold text-callx-blue px-4 py-1.5 rounded-full hover:bg-white transition-colors">
+          {/* <Link to="/profile" className="bg-callx-gold text-callx-blue px-4 py-1.5 rounded-full hover:bg-white transition-colors">
             Profile
-          </Link>
+          </Link> */}
         </nav>
 
         {/* Mobile Menu Button */}
@@ -89,13 +89,13 @@ const Header = () => {
               <User size={18} />
               <span>Dashboard</span>
             </Link>
-            <Link 
+            {/* <Link 
               to="/profile" 
               className="bg-callx-gold text-callx-blue px-4 py-2 rounded-full hover:bg-white transition-colors inline-block w-full text-center"
               onClick={() => setIsMenuOpen(false)}
             >
               Profile
-            </Link>
+            </Link> */}
           </nav>
         </div>
       )}
