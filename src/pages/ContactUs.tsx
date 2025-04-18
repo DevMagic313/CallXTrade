@@ -91,8 +91,8 @@ const ContactUs = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-callx-blue mb-1">Call Us</h3>
-                    <p className="text-gray-600">Main: (971) 123-4567</p>
-                    <p className="text-gray-600">Support: (971) 987-6543</p>
+                    <p className="text-gray-600">Main: (971) 469-5821</p>
+                    <p className="text-gray-600">Support: (971) 987-4629</p>
                   </div>
                 </div>
               </div>
