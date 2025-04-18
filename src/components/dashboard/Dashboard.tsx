@@ -36,7 +36,7 @@ const Dashboard = () => {
       location: 'Dubai, UAE',
       salary: '2,200 AED',
       status: 'pending',
-      date: '2023-04-10',
+      date: '2025-04-01',
       expiresIn: '8h 30m'
     },
     {
@@ -46,7 +46,7 @@ const Dashboard = () => {
       location: 'Remote (UAE Based)',
       salary: '5,500 AED',
       status: 'accepted',
-      date: '2023-04-05'
+      date: '2025-04-01'
     },
     {
       id: 'JOB003',
@@ -55,7 +55,7 @@ const Dashboard = () => {
       location: 'Abu Dhabi, UAE',
       salary: '3,500 AED',
       status: 'declined',
-      date: '2023-03-28'
+      date: '2025-04-01'
     },
     {
       id: 'JOB004',
@@ -64,7 +64,7 @@ const Dashboard = () => {
       location: 'Sharjah, UAE',
       salary: '4,000 AED',
       status: 'expired',
-      date: '2023-03-15'
+      date: '2025-04-01'
     },
     {
       id: 'JOB005',
@@ -73,7 +73,7 @@ const Dashboard = () => {
       location: 'Ajman, UAE',
       salary: '25,000 AED',
       status: 'pending',
-      date: '2023-04-12',
+      date: '2025-04-01',
       expiresIn: '3d 4h'
     }
   ];
