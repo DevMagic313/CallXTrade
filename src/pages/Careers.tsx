@@ -31,8 +31,8 @@ const jobListings: JobListing[] = [
     requirements: ["2+ years experience", "Bilingual+"],
     description: "Join our team as a customer support agent to help our clients with their needs. You'll be the first point of contact for customers and provide exceptional service.",
     type: "Full-time",
-    postedAt: "2023-04-05",
-    expiry: "2023-07-05"
+    postedAt: "2025-04-05",
+    expiry: "2025-07-05"
   },
   {
     id: "JOB002",
@@ -44,8 +44,8 @@ const jobListings: JobListing[] = [
     requirements: ["3+ years technical support", "IT certifications"],
     description: "As a technical support specialist, you'll troubleshoot complex issues and provide technical assistance to our clients. Strong problem-solving skills required.",
     type: "Full-time",
-    postedAt: "2023-04-02",
-    expiry: "2023-07-02"
+    postedAt: "2025-04-02",
+    expiry: "2025-07-02"
   },
   {
     id: "JOB003",
@@ -57,8 +57,8 @@ const jobListings: JobListing[] = [
     requirements: ["5+ years call center experience", "2+ years leadership"],
     description: "Lead a team of customer service representatives, ensuring high-quality service and performance. You'll be responsible for training, coaching, and performance evaluation.",
     type: "Full-time",
-    postedAt: "2023-03-28",
-    expiry: "2023-06-28"
+    postedAt: "2025-03-28",
+    expiry: "2025-06-28"
   },
   {
     id: "JOB004",
@@ -70,8 +70,8 @@ const jobListings: JobListing[] = [
     requirements: ["Fluent in English and Arabic", "1+ year customer service"],
     description: "Provide customer support in both English and Arabic. You'll handle customer inquiries, process orders, and resolve issues for our diverse customer base.",
     type: "Full-time",
-    postedAt: "2023-03-15",
-    expiry: "2023-06-15"
+    postedAt: "2025-03-15",
+    expiry: "2025-06-15"
   },
   {
     id: "JOB005",
@@ -82,8 +82,8 @@ const jobListings: JobListing[] = [
     benefits: ["Flexible Hours", "Paid Time Off", "Growth Opportunities"],
     description: "Join our team part-time to provide exceptional customer service. Perfect for students or those seeking flexible work arrangements.",
     type: "Part-time",
-    postedAt: "2023-04-10",
-    expiry: "2023-07-10"
+    postedAt: "2025-04-10",
+    expiry: "2025-07-10"
   }
 ];
 
