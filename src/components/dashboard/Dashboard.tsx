@@ -135,7 +135,7 @@ const handleViewOffer = (offerId: string) => {
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center">
               <div>
                 <h1 className="text-2xl font-bold mb-2">Dashboard</h1>
-                <p className="text-blue-100">Welcome back, John Doe</p>
+                {/* <p className="text-blue-100">Welcome back, John Doe</p> */}
               </div>
               <div className="mt-4 sm:mt-0">
                 <span className="inline-flex items-center px-3 py-1 bg-callx-gold text-callx-blue rounded-full text-sm font-medium">
