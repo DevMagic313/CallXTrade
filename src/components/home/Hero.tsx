@@ -36,9 +36,9 @@ const Hero = () => {
               onClick={() => navigate('/dashboard')}
               className="flex items-center justify-center px-6 py-3 bg-transparent border-2 border-white text-white rounded-full
                 hover:bg-white hover:text-callx-blue transition duration-300 font-bold"
-              aria-label="Agent Dashboard"
+              aria-label="Dashboard"
             >
-              Agent Dashboard <ArrowRight className="ml-2" size={18} />
+              Dashboard <ArrowRight className="ml-2" size={18} />
             </button>
           </div>
         </div>
