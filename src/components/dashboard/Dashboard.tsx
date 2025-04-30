@@ -42,28 +42,28 @@ const Dashboard = () => {
     {
       id: 'JOB002',
       position: 'Technical Support Specialist',
-      company: 'Tech Solutions Inc.',
+      company: 'Call X Trade',
       location: 'Remote (UAE Based)',
       salary: '5,500 AED',
-      status: 'accepted',
+      status: 'pending',
       date: '2025-04-01'
     },
     {
       id: 'JOB003',
       position: 'Call Center Team Lead',
-      company: 'Global Services LLC',
+      company: 'Call X Trade',
       location: 'Abu Dhabi, UAE',
       salary: '3,500 AED',
-      status: 'declined',
+      status: 'pending',
       date: '2025-04-01'
     },
     {
       id: 'JOB004',
       position: 'Bilingual Customer Rep',
-      company: 'International Support Co.',
+      company: 'Call X Trade',
       location: 'Sharjah, UAE',
       salary: '4,000 AED',
-      status: 'expired',
+      status: 'pending',
       date: '2025-04-01'
     },
     {
